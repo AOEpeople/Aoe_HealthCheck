@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Aoe_HealthCheck>
+            <version>1.0.0</version>
+        </Aoe_HealthCheck>
+    </modules>
+    <frontend>
+        <routers>
+            <Aoe_HealthCheck>
+                <use>standard</use>
+                <args>
+                    <module>Aoe_HealthCheck</module>
+                    <frontName>health</frontName>
+                </args>
+            </Aoe_HealthCheck>
+        </routers>
+    </frontend>
+</config>

@@ -1,10 +1,32 @@
 <?xml version="1.0" ?>
 <config>
+
     <modules>
         <Aoe_HealthCheck>
             <version>1.0.0</version>
         </Aoe_HealthCheck>
     </modules>
+
+    <global>
+        <models>
+            <Aoe_HealthCheck>
+                <class>Aoe_HealthCheck_Model</class>
+            </Aoe_HealthCheck>
+        </models>
+
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <Aoe_HealthCheck>
+                        <class>Aoe_HealthCheck/Observer</class>
+                        <method>disableRedirectToBase</method>
+                    </Aoe_HealthCheck>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+
+    </global>
+
     <frontend>
         <routers>
             <Aoe_HealthCheck>
@@ -16,4 +38,5 @@
             </Aoe_HealthCheck>
         </routers>
     </frontend>
+
 </config>

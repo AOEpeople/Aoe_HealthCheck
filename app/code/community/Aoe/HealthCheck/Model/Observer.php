@@ -23,6 +23,16 @@ class Aoe_HealthCheck_Model_Observer {
             if ($redirectCode) {
                 Mage::app()->getStore(null)->setConfig('web/url/redirect_to_base', false);
             }
+
+            // check Mage_Core_Controller_Varien_Router_Standard->_shouldBeSecure()
+            $baseUrl = Mage::getStoreConfig('web/unsecure/base_url');
+            if (substr($baseUrl, 0, 5) === 'https') {
+                $baseUrl = 'http' . substr($baseUrl, 5);
+                Mage::app()->getStore(null)->setConfig('web/unsecure/base_url', $baseUrl);
+            }
+            if (Mage::getStoreConfigFlag('web/secure/use_in_frontend')) {
+                Mage::app()->getStore(null)->setConfig('web/secure/use_in_frontend', false);
+            }
         }
     }
 

@@ -1,6 +1,10 @@
 {
-    "name": "AOEPeople/Aoe_HealthCheck",
+    "name": "aoepeople/aoe_healthcheck",
     "description": "Simple module that provides an endpoint for (load balancer) health checks",
+    "keywords": [
+        "magento"
+    ],
+    "License": "GPL-3.0",
     "authors": [
         {
             "name": "Fabrizio Branca",

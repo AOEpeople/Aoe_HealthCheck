@@ -18,7 +18,7 @@ class Aoe_HealthCheck_Model_Observer {
      */
     public function disableRedirectToBase() {
         $originalPathInfo = Mage::app()->getRequest()->getOriginalPathInfo();
-        if (strpos($originalPathInfo, '/health/check/') === 0) {
+        if (strpos($originalPathInfo, '/health/check') === 0) {
             $redirectCode = (int)Mage::getStoreConfig('web/url/redirect_to_base');
             if ($redirectCode) {
                 Mage::app()->getStore(null)->setConfig('web/url/redirect_to_base', false);
